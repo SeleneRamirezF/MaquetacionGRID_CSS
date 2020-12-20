@@ -1,0 +1,171 @@
+/*Caracteristicas generales: margenes 0, fuente Font google, tamaño de fuente responsive*/
+
+/* BOX-SIZING para calcular directamente todas las dimensiones de las cajas */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* RESETEO LIMITADO DE PROPIEDADES margen 0*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+
+/*Aspecto especifico*/
+/* classe .container - fuente, color, 80% ancho y centrado*/
+.container {
+  font-family: 'Texturina', serif;
+  font-weight: 80%;
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);/*10% 35% 35% 20%;*/
+  grid-template-areas: "header" "content_wrapper" "articles" "footer";
+}
+
+/*color de la letra específico*/
+.container {
+  color: rgb(192, 74, 5);
+}
+
+/*La cabecera*/
+header {
+  width: 100%;
+  padding-top: 1.5vw;
+}
+
+/* El contenedor flex para la primera fila de contenido .content_wrapper. Dirección, El ajuste,
+ Alineación horizontal, Alineación vertical   */
+#content_wrapper {
+  display: grid;
+  grid-template-columns: 10% 30% 30% 30%;
+  padding: 1vw;
+}
+
+/* El menú */
+#content_wrapper nav {
+  margin: 0.5vw;
+  width: 10%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#content_wrapper nav li {
+  text-align: left;
+  padding: 0.2vw;
+  list-style: none;
+}
+
+#content_wrapper nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3vw;
+}
+
+/* El elemento principal main*/
+#content_wrapper main {
+  margin: 0.5vw;
+  border: 0.1vw solid black;
+  border-radius: 5%;
+  height: 35vw;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+#content_wrapper main p {
+  justify-content: center;
+}
+
+main img {
+  margin: 0.7vw;
+  border-radius: 6%;
+  width: 70%;
+  height: 75%;
+}
+
+/* Artículo. Imágenes pequeñas */
+#content_wrapper article {
+  margin: 0.5vw;
+  border: 0.1vw solid black;
+  border-radius: 5%;
+  height: 35vw;
+}
+
+#content_wrapper article p {
+  justify-content: center;
+}
+
+article img {
+  margin: 0.7vw;
+  border-radius: 6%;
+  width: 70%;
+  height: 75%;
+}
+
+/* El contenedor flex para la segunda fila de contenido .articles. Dirección, El ajuste,
+ Alineación horizontal, Alineación vertical   */
+#articles {
+  display: grid;
+  grid-template-columns: 10% 30% 30% 30%;
+}
+#articles article{
+  margin: 0.5vw;
+  border: 0.1vw solid black;
+  border-radius: 5%;
+}
+#articles article#uno{
+  grid-column-start: 2;
+}
+#articles article img{
+  margin: 0.7vw;
+  border-radius: 6%;
+}
+#articles article p{
+  justify-content: center;
+}
+
+/* Pie de la página */
+/* El contenedor flex para la tercera fila de contenido footer. Dirección, El ajuste,
+ Alineación horizontal, Alineación vertical   */
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  padding-top: 1vw;
+  align-items: center;
+}
+address{
+  text-align: justify;
+  margin: 1.5vw;
+}
+.copyright{
+  margin: 1.5vw;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+.social{
+  margin: 1.5vw;
+}
+.social i{
+  font-size: 3vw;
+  text-align: center;
+}
+i.fa-snapchat-ghost{
+  color: rgb(248, 248, 66);
+}
+i.fa-facebook{
+  color: blue;
+}
+i.fa-twitter{
+  color: skyblue;
+}
